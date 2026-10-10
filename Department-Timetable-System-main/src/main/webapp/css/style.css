@@ -1,0 +1,293 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #f4f7fb, #e8eef7);
+    color: #1b2430;
+}
+
+.page-shell {
+    max-width: 1100px;
+    margin: 32px auto;
+    padding: 0 16px 32px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 12px 30px rgba(26, 45, 74, 0.08);
+    margin-bottom: 20px;
+}
+
+.hero {
+    background: linear-gradient(135deg, #123458, #1f6aa5);
+    color: #ffffff;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #c6d1df;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    box-sizing: border-box;
+}
+
+button, .btn-link {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: none;
+    background: #123458;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-secondary {
+    background: #5d7285;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #e6edf5;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: #eef4fa;
+}
+
+.nav {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+.message {
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.message.error {
+    background: #fee8e7;
+    color: #a72d26;
+}
+
+.message.success {
+    background: #e8f6eb;
+    color: #1f7a37;
+}
+
+.login-card {
+    max-width: 420px;
+    margin: 70px auto;
+}
+
+.timetable-cell {
+    min-width: 165px;
+}
+
+.cell-entry {
+    padding: 8px 0;
+}
+
+.cell-entry + .cell-entry {
+    border-top: 1px dashed #d9e3ef;
+    margin-top: 8px;
+}
+
+.cell-note {
+    color: #5b6f84;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .page-shell {
+        margin-top: 16px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+}
+/* ====== Official Timetable Look ====== */
+ 
+.timetable-card {
+    overflow-x: auto;
+}
+ 
+.timetable-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #123458;
+}
+ 
+.timetable-title span {
+    font-weight: 500;
+    color: #5b6f84;
+    font-size: 1rem;
+}
+ 
+table.official-timetable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 4px;
+    border: 1.5px solid #1b2430;
+    font-size: 0.92rem;
+}
+ 
+.official-timetable th,
+.official-timetable td {
+    border: 1px solid #1b2430;
+    padding: 8px 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+ 
+.official-timetable thead th {
+    background: #123458;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 10px 8px;
+}
+ 
+.date-sub {
+    font-weight: 400;
+    font-size: 0.78rem;
+    opacity: 0.85;
+}
+ 
+.official-timetable .time-col {
+    font-weight: 600;
+    background: #eef4fa;
+    white-space: nowrap;
+    width: 90px;
+}
+ 
+.official-timetable tr.break-row td {
+    background: #f6f8fb;
+    font-weight: 600;
+    color: #5b6f84;
+    letter-spacing: 0.02em;
+}
+ 
+.timetable-cell {
+    min-width: 130px;
+}
+ 
+.cell-entry {
+    padding: 2px 0;
+    line-height: 1.35;
+}
+ 
+.cell-entry + .cell-entry {
+    border-top: 1px dashed #c6d1df;
+    margin-top: 6px;
+    padding-top: 6px;
+}
+ 
+.entry-line strong {
+    font-weight: 700;
+    color: #1b2430;
+}
+ 
+.faculty-tag {
+    color: #1f6aa5;
+    font-weight: 600;
+    margin-left: 4px;
+}
+ 
+.batch-tag,
+.room-tag {
+    font-size: 0.82rem;
+    color: #3d4f63;
+}
+ 
+.room-tag {
+    color: #5b6f84;
+}
+ 
+.cell-note {
+    color: #a72d26;
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-top: 2px;
+}
+ 
+/* Print-friendly version: strips dashboard chrome so it screenshots/prints like an official notice */
+@media print {
+    .page-shell > .card:not(.timetable-card) {
+        display: none;
+    }
+ 
+    .timetable-card {
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+    }
+ 
+    body {
+        background: #ffffff;
+    }
+}
+ 
+@media (max-width: 768px) {
+    .official-timetable {
+        font-size: 0.8rem;
+    }
+ 
+    .timetable-cell {
+        min-width: 100px;
+    }
+}
+.cell-actions {
+    margin-top: 4px;
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+.btn-edit {
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    background: #1f6aa5;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+}
+.btn-delete {
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    background: #a72d26;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
